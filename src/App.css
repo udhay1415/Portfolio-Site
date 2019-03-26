@@ -1,5 +1,26 @@
-.App {
-  text-align: center;
+/* @media (min-width: 576px) {
+  .App {
+    background-color: white;
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 40px 10px 40px;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .App {
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    margin: 10px 40px 10px 40px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 }
 
 .App-logo {
@@ -30,3 +51,191 @@
     transform: rotate(360deg);
   }
 }
+
+.boxStyle1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 30%;
+  min-height: 60px;
+  border-width: 1;
+  background-color: red;
+  text-align: center;
+  font-size: 16px;
+  
+  animation: moveInLeft 0.8s ease-out;
+}
+
+.boxStyle2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 30%;
+  height: 60px;
+  border-width: 1;
+  background-color: blue;
+  text-align: center;
+  transition: all .2s;
+}
+
+.boxStyle2:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 10px 40px #777;
+}
+
+.boxStyle2:active {
+  transform: translateY(-1px);
+  box-shadow: 0px 5px 20px #ccc;
+}
+
+.boxStyle2::after {
+  content: "";
+  transform: translateY(-1px);
+  box-shadow: 0px 5px 20px red;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  
+  80% {
+    transform: translateX(10px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+ }
+ 
+ */
+ html {
+   font-size: 10px;
+ }
+ 
+ *,
+ *::after,
+ *::before {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box; /* Border will no longer be added to the height and width */
+ }
+ 
+ body {
+  font-family: 'Cabin', sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: #777;
+  padding: 2rem;
+ }
+ 
+ .header {
+   position: relative;
+   height: 90vh;
+   background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(40, 180, 131, 0.9)), url(./images/heroImage.svg);
+   background-position: top-left;
+   background-size: auto;
+   background-repeat: no-repeat;
+   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+   text-align: center;
+ }
+ 
+ .text-container {
+   color: #fff;
+   position: absolute;
+   top: 40%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   backface-visibility: hidden; 
+ }
+ 
+ .header-text--primary {
+   font-size: 6.5rem;
+   font-weight: 400;
+   font-family: 'Cabin', sans-serif;
+   text-transform: uppercase;
+   letter-spacing: 2rem;
+   display: block;
+   
+   /* animation-name: moveInLeft;
+   animation-duration: 1.2s;
+   animation-timing-function: ease-in-out; */
+   
+   animation-name: moveInTop;
+   animation-duration: 1.2s;
+   animation-timing-function: ease-in-out;
+ }
+ 
+ .header-text--secondary {
+   font-size: 2rem;
+   font-weight: 400;
+   font-family: 'Cabin', sans-serif;
+   text-transform: uppercase;
+   letter-spacing: .6rem;
+   display: block;
+ }
+ 
+ @keyframes moveInLeft {
+   0% {
+     opacity: 0;
+     transform: translateX(-3rem);
+   }
+   80% {
+     transform: translateX(.5rem);
+   }
+   100% {
+     opacity: 1;
+     transform: translateX(0);
+   }
+ }
+ 
+ @keyframes moveInTop {
+   0% {
+     opacity: 0;
+     transform: translateY(-2rem);
+   }
+   80% {
+     transform: translateY(0.7rem);
+   }
+   100% {
+     opacity: 1;
+     transform: translateY(0);
+   }
+ }
+ 
+.button,.button:visited {
+  padding: .5rem 2rem .5rem 2rem; /* Top Right Bottom Left */
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-family: 'Cabin', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  display: inline-block;
+  margin: 1rem 0rem .5rem 1rem;
+  transition: all .2s;
+}
+
+a {
+  text-decoration: none;
+}
+
+.white--button {
+  background-color: #fff;
+  color: #000;  
+  border-radius: 10rem;
+}
+
+.button:hover {
+  transform: translateY(-.5px);
+  box-shadow: 0rem .5rem 2rem rgba(0,0,0,.4); /* X-Offset, y-Offset, Spread Radius, Color */
+}
+
+
+.button:active {
+  transform: translateY(.2rem);
+  box-shadow: 0rem .2rem 2rem rgba(0,0,0,.4);
+}
+ 
